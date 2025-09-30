@@ -49,6 +49,10 @@ import { ref, onMounted } from 'vue';
   <p v-else-if="status === 'pending'">User is pending</p>
   <p v-else>User is inactive</p>
 
+  <br />
+  <!-- <button v-on:click="toggleStatus">Change Status</button> -->
+  <button @click="toggleStatus">Change Status</button>
+  
   <!-- By adding .prevent we don't have to do e.preventDefault() in the addTask function -->
   <form @submit.prevent="addTask">
     <label for=""newTask>Add Task</label>
@@ -63,8 +67,4 @@ import { ref, onMounted } from 'vue';
   <ul>
     <li v-for="(task, index) in tasks" :key="task"><span>{{task}}</span> <button @click="deleteTask(index)">Delete</button></li>
   </ul>
-
-  <br />
-  <!-- <button v-on:click="toggleStatus">Change Status</button> -->
-  <button @click="toggleStatus">Change Status</button>
 </template>
